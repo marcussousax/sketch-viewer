@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import SketchLogo from '../assets/sketch-logo.svg'
 
 const Home = () => {
@@ -25,7 +26,7 @@ const Home = () => {
       <ul>
         {DOCUMENTS.map((doc, index) => (
           <li key={index}>
-            <a href={doc.id}>{doc.name}</a>
+            <Link to={doc.id}>{doc.name}</Link>
           </li>
         ))}
       </ul>
