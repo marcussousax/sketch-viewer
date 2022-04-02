@@ -1,16 +1,16 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { GlobalStyle, AppWrapper } from './App.styled'
-import Home from './pages/Home'
-import Document from './pages/Document'
+import HomePage from './pages/Home'
+import DocumentPage from './pages/Document'
 
 function App() {
   return (
     <AppWrapper>
       <GlobalStyle />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/:documentId' element={<Document />} />
+        <Route path='/' element={<HomePage />} />
+        <Route path='/:documentId' element={<DocumentPage />} />
       </Routes>
     </AppWrapper>
   )

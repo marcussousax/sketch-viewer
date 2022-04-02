@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import DocumentHeader from '../components/DocumentHeader'
 import LoadingSpinner from '../components/LoadingSpinner'
 
-const Document = () => {
+const DocumentPage = () => {
   const { documentId } = useParams()
   const [loading, setLoading] = React.useState(true)
 
@@ -36,4 +36,4 @@ const DocumentContent = styled.div`
   padding: 2rem;
 `
 
-export default Document
+export default DocumentPage

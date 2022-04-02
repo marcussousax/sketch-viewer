@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import SketchLogo from '../assets/sketch-logo.svg'
 
-const Home = () => {
+const HomePage = () => {
   // I've chosen to create this mocked structure just to simulate
   // a response for another service that fetch documents
   const DOCUMENTS = [
@@ -98,4 +98,4 @@ const HomeContainer = styled.div`
   }
 `
 
-export default Home
+export default HomePage
