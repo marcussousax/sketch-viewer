@@ -16,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     --button-text-shadow: #ea6c00;
     --gray-100: #f9f9f9;
     --gray-200: #e5e5e5;
+    --gray-300: #666;
     --white: #fff;
 
     --loading-spinner-bg: #f8ad03;
