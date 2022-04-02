@@ -2,11 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import SketchLogo from '../assets/sketch-logo.svg'
 import Separator from '../assets/separator.svg'
+import { Link } from 'react-router-dom'
 
-const DocumentHeader = ({ documentTitle }: { documentTitle: string }) => {
+const DocumentHeader = ({ documentTitle }: { documentTitle: string | undefined }) => {
   return (
     <Header>
-      <img alt='Sketch Logo' src={SketchLogo} />
+      <Link to={'/'}>
+        <img alt='Sketch Logo' src={SketchLogo} />
+      </Link>
       <img src={Separator} height={30} />
       <h2>{documentTitle}</h2>
     </Header>
@@ -20,6 +23,10 @@ const Header = styled.header`
   padding: 2rem;
   gap: 1.5rem;
   background-color: var(--white);
+
+  a {
+    display: inherit;
+  }
 
   h2 {
     margin: 0;
