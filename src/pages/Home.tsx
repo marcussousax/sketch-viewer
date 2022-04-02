@@ -9,11 +9,11 @@ const HomePage = () => {
   const DOCUMENTS = [
     {
       id: 'e981971c-ff57-46dc-a932-a60dc1804992',
-      name: 'Document 1',
+      name: 'Code test',
     },
     {
       id: '40432a93-5434-4059-87b9-545fd1ad6ee0',
-      name: 'Document 2',
+      name: 'Code test (bonus)',
     },
   ]
 
