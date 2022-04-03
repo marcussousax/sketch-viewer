@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import Close from '../assets/close.svg'
-import Separator from '../assets/separator.svg'
+import Close from '../../assets/close.svg'
+import Separator from '../../assets/separator.svg'
 import { Link, useParams } from 'react-router-dom'
-import { Spacer } from '../App.styled'
-import Navigation from './ArtboardNavigation'
+import { Spacer } from '../../App.styled'
+import Navigation from './Navigation'
 
 const ArtboardHeader = ({ title }: { title: string | undefined }) => {
   const { documentId } = useParams()

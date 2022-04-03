@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import Figure from '../components/Figure'
-import ArtboardHeader from '../components/ArtboardHeader'
+import ArtboardHeader from '../components/Artboard/Header'
 import LoadingSpinner from '../components/LoadingSpinner'
 import { useArtboard, useSearchParams } from '../hooks'
 

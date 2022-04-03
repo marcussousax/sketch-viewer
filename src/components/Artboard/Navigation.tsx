@@ -1,8 +1,8 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useArtboard, createUrl, useDocument, useSearchParams } from '../hooks'
-import ArrowLeft from '../assets/arrow-left.svg'
-import ArrowRight from '../assets/arrow-right.svg'
+import { useArtboard, createUrl, useDocument, useSearchParams } from '../../hooks'
+import ArrowLeft from '../../assets/arrow-left.svg'
+import ArrowRight from '../../assets/arrow-right.svg'
 import styled from 'styled-components'
 
 const Navigation = () => {
