@@ -21,6 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     --gray-100: #f9f9f9;
     --gray-200: #e5e5e5;
     --gray-300: #666;
+    --gray-400: #9a9a9a;
     --white: #fff;
 
     --loading-spinner-bg: #f8ad03;

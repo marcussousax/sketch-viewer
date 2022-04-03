@@ -1,6 +1,7 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
 import { useLocation } from 'react-router-dom'
+import { Entries, IDocumentProps } from '../@types'
 
 const FETCH_DOCUMENT = gql`
   query FetchDocument($documentId: String!) {
@@ -54,6 +55,32 @@ export function useDocument(documentId?: string) {
     documentArtboardsCount: dataResponse?.artboardsCount,
     documentLoading: loading,
     documentError: error,
+  }
+}
+
+export function useArtboard(documentId?: string, name?: string) {
+  const { documentData }: { documentData: IDocumentProps } = useDocument(documentId)
+  const [loading, setLoading] = React.useState(true)
+
+  const filteredArtboard: Entries[] = React.useMemo(() => {
+    return (
+      documentData &&
+      documentData.artboards.entries.filter((artboard) => artboard.name === name)
+    )
+  }, [documentData, name])
+
+  React.useEffect(() => {
+    if (filteredArtboard) {
+      setLoading(false)
+    }
+  }, [filteredArtboard])
+
+  return {
+    artboardData: filteredArtboard?.[0],
+    artboardPosition: documentData?.artboards.entries.findIndex(
+      (artboard) => artboard.name === name
+    ),
+    artboardLoading: loading,
   }
 }
 

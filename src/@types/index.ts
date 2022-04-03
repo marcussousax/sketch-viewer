@@ -12,7 +12,7 @@ type Files = {
   thumbnails: Thumbnails[]
 }
 
-type Entries = {
+export type Entries = {
   name: string
   isArtboard: boolean
   files: Files[]
