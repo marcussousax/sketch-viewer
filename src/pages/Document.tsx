@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 import { createUrl, useDocument } from '../hooks'
-import Artboard from '../components/Artboard'
+import Figure from '../components/Figure'
 import DocumentHeader from '../components/DocumentHeader'
 import LoadingSpinner from '../components/LoadingSpinner'
 import { IDocumentProps } from '../@types'
@@ -33,9 +33,10 @@ const DocumentPage = () => {
             return (
               <li key={index}>
                 <Link to={url}>
-                  <Artboard
+                  <Figure
                     name={artboard.name}
                     src={artboard.files[0].thumbnails[0].url}
+                    figCaption={artboard.name}
                   />
                 </Link>
               </li>
@@ -70,6 +71,10 @@ const DocumentContent = styled.div`
 
     li {
       flex: 0 1 15%;
+    }
+
+    a {
+      text-decoration: none;
     }
   }
 `

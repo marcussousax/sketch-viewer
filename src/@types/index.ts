@@ -27,7 +27,10 @@ export interface IDocumentProps {
   artboards: Artboards
 }
 
-export interface IArtboardProps {
+export interface IFigureProps {
   name: string
+  figCaption?: string
+  width?: number | string | null
+  height?: number | string | null
   src: string
 }
