@@ -12,14 +12,14 @@ type Files = {
   thumbnails: Thumbnails[]
 }
 
-export type Entries = {
+export type Artboard = {
   name: string
   isArtboard: boolean
   files: Files[]
 }
 
 type Artboards = {
-  entries: Entries[]
+  entries: Artboard[]
 }
 
 export interface IDocumentProps {
