@@ -9,6 +9,10 @@ export const AppWrapper = styled.div`
   flex-direction: column;
 `
 
+export const Spacer = styled.span<{ flex?: number }>`
+  flex: ${({ flex }) => (flex ? flex : 1)};
+`
+
 export const GlobalStyle = createGlobalStyle` 
   :root {
     --button-bg-color: #f8ad03;
