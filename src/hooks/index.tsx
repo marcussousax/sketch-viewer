@@ -87,3 +87,14 @@ export function useArtboard(documentId?: string, name?: string) {
 export function useSearchParams() {
   return new URLSearchParams(useLocation().search)
 }
+
+// This isn't a custom hook
+// TODO: Accept string[] instead string
+export function createUrl(name: string, value: string, pathName?: string): URL {
+  const url = new URL(location.href)
+  url.pathname = `${url.pathname}${pathName ? `/${pathName}` : ''}`
+  url.searchParams.set(name, value)
+  url.toString()
+
+  return url
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import styled from 'styled-components'
-import { useDocument } from '../hooks'
+import { createUrl, useDocument } from '../hooks'
 import Artboard from '../components/Artboard'
 import DocumentHeader from '../components/DocumentHeader'
 import LoadingSpinner from '../components/LoadingSpinner'
@@ -28,13 +28,7 @@ const DocumentPage = () => {
       <DocumentContent>
         <ul>
           {document?.artboards?.entries.map((artboard, index) => {
-            const url = new URL(location.href)
-            url.pathname = `${url.pathname}/artboard`
-            // In the future it could be easier to handle the URL parsing & manipulation
-            // without dealing with strings concatenation, adding something like versioning for example
-            // url.searchParams.set('version', artboard.version)
-            url.searchParams.set('name', artboard.name)
-            url.toString()
+            const url = createUrl('name', artboard.name, 'artboard')
 
             return (
               <li key={index}>

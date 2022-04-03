@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { useArtboard, useDocument, useSearchParams } from '../hooks'
+import { useArtboard, createUrl, useDocument, useSearchParams } from '../hooks'
 import ArrowLeft from '../assets/arrow-left.svg'
 import ArrowRight from '../assets/arrow-right.svg'
 import styled from 'styled-components'
@@ -12,6 +12,7 @@ const Navigation = () => {
 
   const { documentData, documentArtboardsCount } = useDocument(documentId)
   const { artboardPosition } = useArtboard(documentId, name!)
+
   const navigate = useNavigate()
 
   let currentIdx = artboardPosition
@@ -28,11 +29,7 @@ const Navigation = () => {
     currentIdx =
       (currentIdx + (next ? 1 : -1) + documentArtboardsCount) % documentArtboardsCount
 
-    const url = new URL(location.href)
-    url.pathname = `${url.pathname}`
-    url.searchParams.set('name', documentData.artboards.entries[currentIdx].name)
-    url.toString()
-
+    const url = createUrl('name', documentData.artboards.entries[currentIdx].name)
     navigate(url)
   }
 
