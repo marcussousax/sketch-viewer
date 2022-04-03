@@ -46,10 +46,19 @@ const HomeContainer = styled.div`
   header {
     display: flex;
     align-items: center;
+    flex-direction: column;
     gap: 1rem;
+
+    @media (min-width: 25rem) {
+      flex-direction: row;
+    }
 
     img {
       height: 5rem;
+    }
+
+    h1 {
+      text-align: center;
     }
   }
 
@@ -77,6 +86,9 @@ const HomeContainer = styled.div`
     text-transform: uppercase;
     position: relative;
     white-space: nowrap;
+    min-width: 14rem;
+    display: block;
+    text-align: center;
 
     &::before {
       content: ' ';

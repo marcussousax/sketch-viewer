@@ -31,4 +31,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 1.3rem;
   }
+
+  #root {
+    display: flex;
+  }
 `
