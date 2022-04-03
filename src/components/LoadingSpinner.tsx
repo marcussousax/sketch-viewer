@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const LoadingSpinner = () => <Icon />
+const LoadingSpinner = () => <Icon data-testid='loading' />
 
 const Icon = styled.div`
   display: inline-block;
@@ -19,8 +19,8 @@ const Icon = styled.div`
     margin: 0.5rem;
     border-radius: 5rem;
     border: 0.3rem solid var(--loading-spinner-bg);
-    border-color: var(--loading-spinner-bg) transparent
-      var(--loading-spinner-bg) transparent;
+    border-color: var(--loading-spinner-bg) transparent var(--loading-spinner-bg)
+      transparent;
     animation: dual-ring 1.2s linear infinite;
   }
   @keyframes dual-ring {
