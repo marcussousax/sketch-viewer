@@ -26,7 +26,12 @@ const ArtboardPage = () => {
         <ul>
           <li>
             <figure>
-              <img alt='' src={artboardData.files[0].thumbnails[0].url} />
+              <img
+                alt=''
+                loading='lazy'
+                decoding='async'
+                src={artboardData.files[0].thumbnails[0].url}
+              />
             </figure>
           </li>
         </ul>

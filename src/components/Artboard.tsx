@@ -6,7 +6,7 @@ const Artboard = ({ name, src }: IArtboardProps) => {
   return (
     <Figure>
       <div className='image-holder'>
-        <img src={src} alt={name} />
+        <img loading='lazy' decoding='async' src={src} alt={name} />
       </div>
       <figcaption>{name}</figcaption>
     </Figure>
