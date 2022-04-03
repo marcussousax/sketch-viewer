@@ -1,5 +1,6 @@
 import React from 'react'
 import { gql, useQuery } from '@apollo/client'
+import { useLocation } from 'react-router-dom'
 
 const FETCH_DOCUMENT = gql`
   query FetchDocument($documentId: String!) {
@@ -54,4 +55,8 @@ export function useDocument(documentId?: string) {
     documentLoading: loading,
     documentError: error,
   }
+}
+
+export function useSearchParams() {
+  return new URLSearchParams(useLocation().search)
 }
