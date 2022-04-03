@@ -23,6 +23,8 @@ const Header = styled.header`
   padding: 2rem;
   gap: 1.5rem;
   background-color: var(--white);
+  position: sticky;
+  top: 0;
 
   a {
     display: inherit;
