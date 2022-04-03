@@ -40,11 +40,17 @@ export function useDocument(documentId?: string) {
   })
 
   const dataResponse = React.useMemo(() => {
-    return data && data.share.version.document
+    return (
+      data && {
+        document: data.share.version.document,
+        artboardsCount: data.share.version.document.artboards.entries.length,
+      }
+    )
   }, [data])
 
   return {
-    documentData: dataResponse,
+    documentData: dataResponse?.document,
+    documentArtboardsCount: dataResponse?.artboardsCount,
     documentLoading: loading,
     documentError: error,
   }
