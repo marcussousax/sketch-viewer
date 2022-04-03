@@ -11,8 +11,8 @@ const Navigation = () => {
   const name = query.get('name')
 
   const { documentData, documentArtboardsCount } = useDocument(documentId)
-
   const { artboardPosition } = useArtboard(documentId, name!)
+  const navigate = useNavigate()
 
   let currentIdx = artboardPosition
 
@@ -35,8 +35,6 @@ const Navigation = () => {
 
     navigate(url)
   }
-
-  const navigate = useNavigate()
 
   return (
     <NavigationContainer>
