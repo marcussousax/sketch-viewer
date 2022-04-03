@@ -20,7 +20,7 @@ const ArtboardPage = () => {
 
   return (
     <ArtboardContainer>
-      <ArtboardHeader title={artboardData?.name} />
+      <ArtboardHeader title={artboardData.name} />
 
       <ArtboardContent>
         <ul>

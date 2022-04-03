@@ -1,5 +1,5 @@
 import React from 'react'
-import { gql, useQuery } from '@apollo/client'
+import { ApolloError, gql, useQuery } from '@apollo/client'
 import { useLocation } from 'react-router-dom'
 import { Entries, IDocumentProps } from '../@types'
 
@@ -33,7 +33,12 @@ const FETCH_DOCUMENT = gql`
   }
 `
 
-export function useDocument(documentId?: string) {
+export function useDocument(documentId?: string): {
+  documentData: IDocumentProps
+  documentArtboardsCount: number
+  documentLoading: boolean
+  documentError: ApolloError | undefined
+} {
   const { data, loading, error } = useQuery(FETCH_DOCUMENT, {
     fetchPolicy: 'cache-first',
     variables: {
@@ -42,12 +47,10 @@ export function useDocument(documentId?: string) {
   })
 
   const dataResponse = React.useMemo(() => {
-    return (
-      data && {
-        document: data.share.version.document,
-        artboardsCount: data.share.version.document.artboards.entries.length,
-      }
-    )
+    return {
+      document: data?.share.version.document,
+      artboardsCount: data?.share.version.document.artboards.entries.length,
+    }
   }, [data])
 
   return {
@@ -58,15 +61,19 @@ export function useDocument(documentId?: string) {
   }
 }
 
-export function useArtboard(documentId?: string, name?: string) {
+export function useArtboard(
+  documentId?: string,
+  name?: string
+): {
+  artboardData: Entries
+  artboardPosition: number
+  artboardLoading: boolean
+} {
   const { documentData }: { documentData: IDocumentProps } = useDocument(documentId)
   const [loading, setLoading] = React.useState(true)
 
   const filteredArtboard: Entries[] = React.useMemo(() => {
-    return (
-      documentData &&
-      documentData.artboards.entries.filter((artboard) => artboard.name === name)
-    )
+    return documentData?.artboards.entries.filter((artboard) => artboard.name === name)
   }, [documentData, name])
 
   React.useEffect(() => {
@@ -84,7 +91,7 @@ export function useArtboard(documentId?: string, name?: string) {
   }
 }
 
-export function useSearchParams() {
+export function useSearchParams(): URLSearchParams {
   return new URLSearchParams(useLocation().search)
 }
 
