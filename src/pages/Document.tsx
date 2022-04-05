@@ -6,6 +6,7 @@ import Figure from '../components/Figure'
 import DocumentHeader from '../components/DocumentHeader'
 import LoadingSpinner from '../components/LoadingSpinner'
 import { IDocumentProps } from '../@types'
+import NotFound from './NotFound'
 
 const DocumentPage = () => {
   const { documentId } = useParams()
@@ -20,7 +21,10 @@ const DocumentPage = () => {
   }, [documentData])
 
   if (documentLoading) return <LoadingSpinner />
-  if (documentError) return <p>Request error: ${documentError}</p>
+  if (documentError) {
+    console.error(documentError.message)
+    return <NotFound summary="Document doesn't exist" details={documentError.message} />
+  }
 
   return (
     <DocumentContainer>

@@ -5,20 +5,20 @@ import Figure from '../components/Figure'
 import ArtboardHeader from '../components/Artboard/Header'
 import LoadingSpinner from '../components/LoadingSpinner'
 import { useArtboard, useSearchParams } from '../hooks'
+import NotFound from './NotFound'
 
 const ArtboardPage = () => {
   const { documentId } = useParams()
   const query = useSearchParams()
   const name = query.get('name')
 
-  const { artboardData, artboardLoading } = useArtboard(
-    documentId,
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-    name!
-  )
+  const { artboardData, artboardLoading, artboardError } = useArtboard(documentId, name!)
 
   if (!name || !documentId || artboardLoading) return <LoadingSpinner />
-
+  if (artboardError) {
+    console.error(artboardError)
+    return <NotFound summary={artboardError} />
+  }
   return (
     <ArtboardContainer>
       <ArtboardHeader title={artboardData.name} />

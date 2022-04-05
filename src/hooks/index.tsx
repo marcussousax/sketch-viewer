@@ -68,6 +68,7 @@ export function useArtboard(
   artboardData: Artboard
   artboardPosition: number
   artboardLoading: boolean
+  artboardError: string | null
 } {
   const { documentData }: { documentData: IDocumentProps } = useDocument(documentId)
   const [loading, setLoading] = React.useState(true)
@@ -88,6 +89,7 @@ export function useArtboard(
       (artboard) => artboard.name === name
     ),
     artboardLoading: loading,
+    artboardError: filteredArtboard?.length ? null : "Artboard doesn't exist",
   }
 }
 
