@@ -56,7 +56,7 @@ const ArtboardContent = styled.div`
 
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-auto-flow: row dense;
+    grid-auto-flow: row;
 
     li {
       flex: 0 1 15%;

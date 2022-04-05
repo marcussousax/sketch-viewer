@@ -11,7 +11,7 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/:documentId' element={<DocumentPage />}></Route>
+        <Route path='/:documentId' element={<DocumentPage />} />
         <Route path='/:documentId/artboard' element={<ArtboardPage />} />
       </Routes>
     </AppWrapper>

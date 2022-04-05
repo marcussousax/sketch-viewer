@@ -75,39 +75,39 @@ const HomeContainer = styled.div`
     @media (min-width: 25rem) {
       flex-direction: row;
     }
-  }
 
-  a {
-    background: var(--button-bg-color);
-    color: #fff;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    text-shadow: 0 0.1rem var(--button-text-shadow);
-    font-size: 1.3rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: relative;
-    white-space: nowrap;
-    min-width: 14rem;
-    display: block;
-    text-align: center;
-
-    &::before {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+    a {
+      background: var(--button-bg-color);
+      color: #fff;
+      padding: 1.5rem;
       border-radius: 0.5rem;
-      box-shadow: 0 0.1rem 5rem 0 rgba(0, 0, 0, 0.2);
-      border: 0.2rem solid var(--button-border-color);
-      opacity: 0;
-      transition: opacity 500ms;
-    }
+      text-shadow: 0 0.1rem var(--button-text-shadow);
+      font-size: 1.3rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      position: relative;
+      white-space: nowrap;
+      min-width: 14rem;
+      display: block;
+      text-align: center;
 
-    &:hover::before {
-      opacity: 1;
+      &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.1rem 5rem 0 rgba(0, 0, 0, 0.2);
+        border: 0.2rem solid var(--button-border-color);
+        opacity: 0;
+        transition: opacity 500ms;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
     }
   }
 `
