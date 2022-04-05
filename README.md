@@ -1,3 +1,7 @@
+## Possible improvements
+- Setup webpack aliases using CRA to standardize import paths
+- Improve testing setup mocking the Apollo Provider to avoid testing using a real request
+---
 ## Available Scripts
 
 In the project directory, you can run:
