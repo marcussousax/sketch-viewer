@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router'
 
-import App from '../App'
+import App from '../../App'
 
 describe('Homepage', () => {
   it('it should show the logo and buttons', () => {

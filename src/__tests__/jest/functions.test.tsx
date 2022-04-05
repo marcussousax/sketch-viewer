@@ -1,4 +1,4 @@
-import { createUrl, useSearchParams } from '../hooks'
+import { createUrl } from '../../hooks'
 
 describe('functions', () => {
   it('it should generate the URL', () => {

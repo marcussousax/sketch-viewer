@@ -26,13 +26,13 @@ const DocumentPage = () => {
     <DocumentContainer>
       <DocumentHeader documentTitle={document?.name} />
       <DocumentContent>
-        <ul>
+        <ul data-testid='artboards-grid'>
           {document?.artboards?.entries.map((artboard, index) => {
             const url = createUrl('name', artboard.name, 'artboard')
 
             return (
               <li key={index}>
-                <Link to={url}>
+                <Link to={url} data-testid={`artboard-link-${index}`}>
                   <Figure
                     name={artboard.name}
                     src={artboard.files[0].thumbnails[0].url}

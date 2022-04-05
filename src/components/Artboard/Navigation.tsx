@@ -35,11 +35,19 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <Button onClick={() => previous()} disabled={currentIdx + 1 === 1}>
+      <Button
+        data-testid='previous-navigation'
+        onClick={() => previous()}
+        disabled={currentIdx + 1 === 1}
+      >
         <img src={ArrowLeft} alt='Previous artboard' />
       </Button>
       {currentIdx + 1} / {documentArtboardsCount}
-      <Button onClick={() => next()} disabled={currentIdx + 1 === documentArtboardsCount}>
+      <Button
+        data-testid='next-navigation'
+        onClick={() => next()}
+        disabled={currentIdx + 1 === documentArtboardsCount}
+      >
         <img src={ArrowRight} alt='Next artboard' />
       </Button>
     </NavigationContainer>

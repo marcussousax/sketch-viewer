@@ -26,7 +26,9 @@ const HomePage = () => {
       <ul>
         {DOCUMENTS.map((doc, index) => (
           <li key={index}>
-            <Link to={doc.id}>{doc.name}</Link>
+            <Link data-testid={`document-link-${index}`} to={doc.id}>
+              {doc.name}
+            </Link>
           </li>
         ))}
       </ul>
