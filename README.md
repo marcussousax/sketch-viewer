@@ -2,6 +2,13 @@
 
 In the project directory, you can run:
 
+## `Installation`
+```bash
+yarn install
+```
+
+---
+## Project's scripts
 ### `yarn start`
 
 Runs the app in the development mode.\
